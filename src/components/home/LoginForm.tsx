@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './login-form.css';
 
 function LoginForm() {
     const [emailValue, setEmailValue] = React.useState<string>("");
@@ -13,22 +14,24 @@ function LoginForm() {
     } 
 
     return (
-        <section>
+        <section id="login_form">
             <form>
-            <div>
-                <label htmlFor="email">Email: </label>
-                <input type="email" id="email" value={emailValue} onChange={handleEmailChange} />
-            </div>
+                <div>
+                    <label htmlFor="email">Email: </label>
+                    <input type="email" id="email" value={emailValue} onChange={handleEmailChange} />
+                </div>
 
-            <div>
-                <label htmlFor="password">Password: </label>
-                <input type="password" id="password" value={passwordValue} onChange={handlePasswordChange} />
-            </div>
+                <div>
+                    <label htmlFor="password">Password: </label>
+                    <input type="password" id="password" value={passwordValue} onChange={handlePasswordChange} />
+                </div>
 
-            <button type="button">Submit</button>
-        </form>
+                <div>
+                    <button type="button">Submit</button>
+                </div>
+            </form>
 
-        <p>If you do not yet have an account, sign up <a href="/here">here.</a></p>
+            <p>If you do not yet have an account, sign up <a href="/here">here.</a></p>
         </section>
     )
 }

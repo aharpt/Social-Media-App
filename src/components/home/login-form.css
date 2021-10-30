@@ -1,0 +1,21 @@
+#login_form {
+    background-color: antiquewhite;
+    padding: 20px;
+    width: 45%;
+}
+
+/* do not want div containing 'Submit' button to have these styles */
+form div:not(:last-child) {
+    margin: 5px auto;
+}
+
+/* div containing 'Submit' button styles */
+form div:last-child {
+    margin-left: 180px;
+    margin-top: 10px;
+}
+
+form label {
+    display: inline-block;
+    width: 85px;
+}

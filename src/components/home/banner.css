@@ -5,6 +5,12 @@ section {
     margin: auto;
 }
 
+#banner {
+    background-color: antiquewhite;
+    padding: 20px 20px 0px 20px;
+    width: 45%;
+}
+
 section h1 {
     margin-bottom: 10px;
 }
