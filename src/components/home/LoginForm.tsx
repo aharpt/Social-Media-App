@@ -21,10 +21,14 @@ function LoginForm() {
     const [errors, setErrors] = React.useState<formErrors>(initialErrorState);
 
     const handleEmailChange = (event : React.ChangeEvent<HTMLInputElement>) : void => {
+        setErrors(initialErrorState);
+
         setEmailValue(event.target.value);
     } 
 
     const handlePasswordChange = (event : React.ChangeEvent<HTMLInputElement>) : void => {
+        setErrors(initialErrorState);
+
         setPasswordValue(event.target.value);
     }
 
@@ -36,18 +40,20 @@ function LoginForm() {
                 ...errors,
                 emptyEmail: true,
             })
+        }  else if (!emailRegex.test(emailValue.toLowerCase())) {
+            setErrors({
+                ...errors,
+                invalidEmail: true,
+            })
         } else if (passwordValue === "") {
             setErrors({
                 ...errors,
                 emptyPassword: true,
             })
-        } else if (!emailRegex.test(emailValue.toLowerCase())) {
-            setErrors({
-                ...errors,
-                invalidEmail: true,
-            })
         } else {
             setErrors(initialErrorState);
+            setEmailValue("");
+            setPasswordValue("");
         }
     }
 
@@ -64,9 +70,9 @@ function LoginForm() {
                     <input type="password" id="password" value={passwordValue} onChange={handlePasswordChange} />
                 </div>
 
-                {errors.emptyEmail && <span className="error-text">Email field cannot be left blank</span>}
-                {errors.emptyPassword && <span className="error-text">Password field cannot be left blank</span>}
-                {errors.invalidEmail && <span className="error-text">Email is not the correct format</span>}
+                {errors.emptyEmail && <span className="error-text">Email field cannot be left blank.</span>}
+                {errors.emptyPassword && <span className="error-text">Password field cannot be left blank.</span>}
+                {errors.invalidEmail && <span className="error-text">Email is not the correct format.</span>}
 
                 <div id="submit_container">
                     <button type="submit">Submit</button>
