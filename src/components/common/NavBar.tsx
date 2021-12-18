@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './commonComponents.css';
 
 function NavBar() {
     return (
         <nav>
             <ul className="home-list">
-                <li><a href="/home">Home</a></li>
+                <Link to="/home">Home</Link>
             </ul>
 
             <ul className="info-list">
-                <li><a href="/notifications">Notifications</a></li>
-                <li><a href="/messages">Messages</a></li>
-                <li><a href="/sign-in">Sign-In</a></li>
+                <Link to="/notifications">Notifications</Link>
+                <Link to="/messages">Messages</Link>
+                <Link to="/sign-in">Sign-In</Link>
             </ul>
         </nav>
     )

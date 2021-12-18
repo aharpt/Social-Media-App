@@ -23,10 +23,6 @@ ul li a {
     margin-right: auto;
 }
 
-.info-list li:not(:last-child) {
-    margin-right: 20px;
-}
-
-.info-list li:last-child {
+.info-list > * {
     margin-right: 20px;
 }
