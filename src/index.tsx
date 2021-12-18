@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import Home from './components/home/Home';
 import Notifications from './components/notifications/Notifications';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,7 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Home />} />
       <Route path="/notifications" element={<Notifications />} />
     </Routes>
     </BrowserRouter>
