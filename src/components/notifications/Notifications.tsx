@@ -1,10 +1,25 @@
 import React from 'react'
+import NavBar from '../common/NavBar'
+import Notification from './Notification'
 
-function Notifications() {
+interface NotificationsProps {
+    notifications: Array<{
+        id: number;
+        title: string;
+        text: string;
+    }>;
+};
+
+function Notifications({notifications} : NotificationsProps) : React.ReactElement {
     return (
-        <div>
-            <p>Notifications</p>
-        </div>
+        <>
+            <NavBar />
+            {
+                notifications.map(({id, title, text}) => (
+                    <Notification key={id} title={title} text={text} />
+                ))
+            }
+        </>
     )
 }
 

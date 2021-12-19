@@ -6,12 +6,30 @@ import Home from './components/home/Home';
 import Notifications from './components/notifications/Notifications';
 import reportWebVitals from './reportWebVitals';
 
+const notifications = [
+  {
+    id: 1,
+    title: "Notification 1", 
+    text: "Lorem ipsum dolor sit amet...",
+  },
+  {
+    id: 2,
+    title: "Notification 2", 
+    text: "Lorem ipsum dolor sit amet...",
+  },
+  {
+    id: 3,
+    title: "Notification 3", 
+    text: "Lorem ipsum dolor sit amet...",
+  }
+];
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/notifications" element={<Notifications />} />
+      <Route path="/notifications" element={<Notifications notifications={notifications} />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>,
